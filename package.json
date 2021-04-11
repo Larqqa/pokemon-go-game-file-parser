@@ -1,0 +1,28 @@
+{
+  "name": "pokemon-go-game-file-parser",
+  "version": "1.0.0",
+  "description": "Script to generate JSON files of different types of data in the Pokemon Go Game Master file",
+  "main": "index.js",
+  "author": "larqqa",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon",
+    "build": "rm -rf ./dist && tsc",
+    "send": "node ./build/index.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --fix --ext .ts"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.5.10",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.21.0",
+    "@typescript-eslint/parser": "^4.21.0",
+    "eslint": "^7.23.0",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
