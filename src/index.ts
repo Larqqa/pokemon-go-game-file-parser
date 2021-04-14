@@ -1,9 +1,9 @@
-import { logAll } from './utilities';
+import * as fs from 'fs';
+import { logAll, Map, makeFile } from './utilities';
 import { Pokemon } from './classes/Pokemon';
 import { Move } from './classes/Move';
 import { PokemonType } from './classes/Type';
-
-import * as pokemonGoData from './data/master-file.json';
+import * as pokemonGoData from '../lib/master-file.json';
 
 (async () => {
   const misc = new Map();
@@ -46,11 +46,28 @@ import * as pokemonGoData from './data/master-file.json';
     }
   });
 
-  const bulba = pokemon.get('BULBASAUR');
-  logAll(bulba);
+  makeFile(
+    'lib/pokemon.json',
+    pokemon,
+    'Pokemon file created'
+  );
 
-  // logAll(pokeIdMap.get(bulba.id));
-  // bulba.pokemonType.map((type:string) => logAll(types.get(type)));
-  // bulba.quickMoves.map((move:string) => logAll(combat.get(move)));
-  // bulba.cinematicMoves.map((move:string) => logAll(combat.get(move)));
+  makeFile(
+    'lib/pokeIdMap.json',
+    pokeIdMap,
+    'Pokemon ID map file created'
+  );
+
+  makeFile(
+    'lib/types.json',
+    types,
+    'Pokemon type file created'
+  );
+
+  makeFile(
+    'lib/combat.json',
+    combat,
+    'Pokemon move file created'
+  );
+
 })();

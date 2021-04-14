@@ -6,9 +6,10 @@
   "author": "larqqa",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon",
+    "start": "npm run get-data && npm run watch",
+    "watch": "nodemon",
     "build": "rm -rf ./dist && tsc",
-    "get-data": "ts-node ./src/data/dataToJson.ts",
+    "get-data": "ts-node ./src/dataToJson.ts",
     "parse": "node ./build/index.js",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --fix --ext .ts"

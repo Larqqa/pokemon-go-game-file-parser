@@ -1,3 +1,5 @@
+import { Map } from '../utilities';
+
 const attackTypes: string[] = [
   'NORMAL',
   'FIGHTING',
@@ -21,7 +23,7 @@ const attackTypes: string[] = [
 
 export class PokemonType {
   attackType: string;
-  attackScalar: Map<string, number>;
+  attackScalar: Map;
 
   constructor(pokemonType: any) {
     const name = pokemonType?.attackType.split('_');
